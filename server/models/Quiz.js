@@ -1,4 +1,5 @@
-import { Schema, Types } from 'mongoose'
+// import { Schema, Types } from 'mongoose'
+const { Schema, model } = require('mongoose');
 
 const quizSchema = new Schema({
     question: {
