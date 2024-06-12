@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
+import { LOGIN_USER, CREATE_USER } from '../../utils/mutation';
+import Auth from '../../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -28,8 +28,13 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
+      if (Auth.loggedIn === true) {
+        document.location.replace('/QuizForm');
+      } else {
+        document.location.replace('./pages/Error.jsx');
+      }
     } catch (e) {
-      console.error(e);
+      console.error('Error during login mutation:', e);
     }
 
     // clear form values

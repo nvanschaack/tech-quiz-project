@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { ADD_PROFILE } from '../utils/mutations';
+import { LOGIN_USER, CREATE_USER } from '../../utils/mutation';
 
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -12,7 +12,7 @@ const Signup = () => {
     email: '',
     password: '',
   });
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  const [login, { error, data }] = useMutation(CREATE_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -35,6 +35,13 @@ const Signup = () => {
       });
 
       Auth.login(data.addProfile.token);
+
+      if (Auth.loggedIn === true) {
+        document.location.replace('/QuizForm');
+      } else {
+        document.location.replace('./pages/Error.jsx');
+      }
+
     } catch (e) {
       console.error(e);
     }
