@@ -36,12 +36,6 @@ const Signup = () => {
 
       Auth.login(data.addProfile.token);
 
-      if (Auth.loggedIn === true) {
-        document.location.replace('/QuizForm');
-      } else {
-        document.location.replace('./pages/Error.jsx');
-      }
-
     } catch (e) {
       console.error(e);
     }
