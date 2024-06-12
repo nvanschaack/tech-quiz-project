@@ -1,25 +1,33 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_ALL_USERS = gql`
-    query getAllUsers {
-      users {
-        _id
-        username
-        email
-        password
-        highScore
-      }
+ query getAllUsers {
+  users {
+    _id
+    highScore
+    email
+    password
+    username
+    thoughts {
+      thoughtText
     }
+  }
+}
 `;
 
 export const QUERY_USER = gql`
 query getOneUser($id: ID!) {
   user(_id: $id) {
     _id
-    username
     email
-    password
     highScore
+    password
+    username
+    thoughts {
+      _id
+      thoughtAuthor
+      thoughtText
+    }
   }
 }
 `;
@@ -43,6 +51,16 @@ query me {
     email
     password
     highScore
+  }
+}
+`;
+
+export const QUERY_THOUGHTS = gql`
+query getAllThoughts {
+  thoughts {
+    _id
+    thoughtAuthor
+    thoughtText
   }
 }
 `;

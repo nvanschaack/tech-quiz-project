@@ -1,13 +1,13 @@
-const { User, Quiz } = require('../models');
+const { User, Quiz, Thought } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find().populate('thoughts');
     },
     user: async (parent, { _id }) => {
-      return User.findOne({ _id });
+      return User.findOne({ _id }).populate('thoughts');
     },
     quizzes: async () => {
         return Quiz.find();
@@ -18,6 +18,12 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    thoughts: async () => {
+      return Thought.find();
+    },
+    thought: async (_, { _id }) => {
+      return Thought.findOne({ _id });
+    }
   },
 
   Mutation: {
@@ -43,6 +49,35 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addThought: async (parent, { thoughtAuthor, thoughtText }, context) => {
+      if (context.user) {
+        const thought = await Thought.create({
+          thoughtText,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { thoughts: thought._id } }
+        );
+      return thought;
+    }
+    },
+    removeThought: async (parent, { thoughtId }, context) => {
+      if (context.user) {
+        const thought = await Thought.findOneAndDelete({
+          _id: thoughtId,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { thoughts: thought._id } }
+        );
+
+        return thought;
+      }
     },
   },
 };

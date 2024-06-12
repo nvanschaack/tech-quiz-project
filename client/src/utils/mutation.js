@@ -29,3 +29,13 @@ mutation login($email: String!, $password: String!) {
     }
   }
 `;
+
+export const ADD_THOUGHT = gql`
+mutation AddThought($thoughtText: String!) {
+  addThought(thoughtText: $thoughtText) {
+    _id
+    thoughtAuthor
+    thoughtText
+  }
+}
+`;
