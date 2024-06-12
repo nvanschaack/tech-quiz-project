@@ -24,7 +24,13 @@ const userSchema = new Schema({
         type: Number,
         default: 0,
     },
-
+    thoughts: [
+      {
+      type: Schema.Types.ObjectId,
+      ref: 'Thought',
+      maxlength: 240
+    },
+  ],
 });
 
 //hashing password using bcrypt. the encryption will be 2^10 

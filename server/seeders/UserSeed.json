@@ -21,46 +21,39 @@
       "username": "Kent Beck",
       "email": "kbeck@techfriends.dev",
       "password": "password04",
-      "highScore": "50",
-      "thoughts": ["Wow! What an amazing quiz!"]
+      "highScore": "50"
     },
     {
       "username": "Edward V. Berard",
       "email": "evberard@techfriends.dev",
       "password": "password05",
-      "highScore": "70",
-      "thoughts": ["10/10 Would recommened to a friend!"]
+      "highScore": "70"
     },
     {
       "username": "Alan Kay",
       "email": "akay@techfriends.dev",
       "password": "password06",
-      "highScore": "90",
-      "thoughts": ["I really need to study more."]
+      "highScore": "90"
     },
     {
       "username": "C.A.R. Hoare",
       "email": "choare@techfriends.dev",
       "password": "password07",
-      "highScore": "80",
-      "thoughts": ["Wow! What an amazing quiz!", "Second time around this quiz didn't get any easier."]
+      "highScore": "80"
     },
     {
       "username": "David Thomas",
       "email": "dthomas@techfriends.dev",
-      "password": "password08",
-      "thoughts": ["Harder than expected."]
+      "password": "password08"
     },
     {
       "username": "Donald Knuth",
       "email": "dknuth@techfriends.dev",
-      "password": "password09",
-      "thoughts": ["When does quiz 2 come out!?"]
+      "password": "password09"
     },
     {
       "username": "Lernantino",
       "email": "lernantino@techfriends.dev",
-      "password": "password10",
-      "thoughts": []
+      "password": "password10"
     }
   ]
