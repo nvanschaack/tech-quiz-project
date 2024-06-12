@@ -15,7 +15,7 @@ mutation createUser($username: String!, $email: String!, $password: String!) {
 `;
 
 //displays auth token (expires after 2 hours)
-export const LOGIN_USER = gql`
+export const ADD_PROFILE = gql`
 mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       user {
