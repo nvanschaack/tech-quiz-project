@@ -10,7 +10,7 @@ const resolvers = {
       return User.findOne({ _id }).populate('thoughts');
     },
     quizzes: async () => {
-        return Quiz.find();
+      return Quiz.find();
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -32,7 +32,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -61,8 +61,8 @@ const resolvers = {
           { _id: context.user._id },
           { $addToSet: { thoughts: thought._id } }
         );
-      return thought;
-    }
+        return thought;
+      }
     },
     removeThought: async (parent, { thoughtId }, context) => {
       if (context.user) {
