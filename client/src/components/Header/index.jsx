@@ -12,11 +12,11 @@ const Header = () => {
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
         <Link className="text-dark" to="/">
           <h1 className="m-0" style={{ fontSize: '3rem' }}>
-            Tech Friends
+            Tech Quiz
           </h1>
         </Link>
         <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Meet your new programming pals.
+          Come mold your mind with other like minded programmers. To be the best you have to study with the best.
         </p>
         <div>
           {Auth.loggedIn() ? (

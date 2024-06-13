@@ -27,7 +27,7 @@ class AuthService {
     //save token in local storage
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/QuizForm');
+        window.location.assign('/');
     }
     //delete token from local storage
     logout() {

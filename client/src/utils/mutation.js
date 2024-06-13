@@ -10,9 +10,21 @@ mutation createUser($username: String!, $email: String!, $password: String!) {
         password
         highScore
       }
+        token
     }
   }
 `;
+// export const ADD_USER = gql`
+//   mutation addUser($username: String!, $email: String!, $password: String!) {
+//     addUser(username: $username, email: $email, password: $password) {
+//       token
+//       user {
+//         _id
+//         username
+//       }
+//     }
+//   }
+// `;
 
 //displays auth token (expires after 2 hours)
 export const LOGIN_USER = gql`
