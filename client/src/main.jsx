@@ -2,11 +2,10 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.jsx';
-import Home from './components/Login';
+import Home from './pages/Home';
 import Signup from './components/SignUp';
 import Login from './components/Login';
 import QuizForm from './components/QuizForm';
-import ThoughtList from './components/ThoughtList/index.jsx';
 import Error from './pages/Error'
 
 const router = createBrowserRouter([
@@ -28,9 +27,6 @@ const router = createBrowserRouter([
       }, {
         path: '/quizform',
         element: <QuizForm />
-      },{
-        path: '/thoughtlist',
-        element: <ThoughtList />
       }
     
     ],
