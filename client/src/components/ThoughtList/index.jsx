@@ -19,31 +19,11 @@ const ThoughtList = ({
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
-              {showUsername ? (
-                <Link
-                  className="text-light"
-                  to={`/profiles/${thought.thoughtAuthor}`}
-                >
-                  {thought.thoughtAuthor} <br />
-                  <span style={{ fontSize: '1rem' }}>
-                    
-                  </span>
-                </Link>
-              ) : (
-                <>
-                 
-                </>
-              )}
+              {thought.thoughtAuthor}
             </h4>
             <div className="card-body bg-light p-2">
               <p>{thought.thoughtText}</p>
             </div>
-            <Link
-              className="btn btn-primary btn-block btn-squared"
-              to={`/thoughts/${thought._id}`}
-            >
-              Join in on the discussion to Tech-Quiz!
-            </Link>
           </div>
         ))}
     </div>
