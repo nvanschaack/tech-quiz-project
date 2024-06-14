@@ -18,7 +18,7 @@ const ThoughtList = ({
       {thoughts &&
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header bg-primary text-dark p-2 m-0">
               {thought.thoughtAuthor}
             </h4>
             <div className="card-body bg-light p-2">

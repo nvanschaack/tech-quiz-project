@@ -31,7 +31,7 @@ export default function QuizForm() {
 
     return (
         <div>
-            <p>Quiz Here!</p>
+            
             <div>
                 <form onSubmit={displayScore}>
                     {loading ? <h1>loading</h1> : data.quizzes.map((option, questionindex) => {
