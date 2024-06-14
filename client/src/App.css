@@ -428,7 +428,7 @@ a {
 }
 
 a:hover {
-  color: #065b83;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -988,7 +988,7 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: #cecece;
+  background-color: #fff;
 }
 
 .btn.btn-squared {
@@ -1017,7 +1017,7 @@ a:hover {
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #ffffff;
 }
 
 .btn.btn-danger {
@@ -1026,7 +1026,7 @@ a:hover {
 }
 
 .btn.btn-danger:hover {
-  background-color: #ee8294;
+  background-color: #fff;
 }
 
 .btn.btn-info {
@@ -1035,7 +1035,7 @@ a:hover {
 }
 
 .btn.btn-info:hover {
-  background-color: #ebcece;
+  background-color: #fff;
 }
 
 .btn.btn-light {
@@ -1044,7 +1044,7 @@ a:hover {
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #fff;
 }
 
 .btn.btn-dark {
@@ -1062,7 +1062,7 @@ a:hover {
 }
 
 .btn.btn-white:hover {
-  background-color: #cccccc;
+  background-color: #fff;
 }
 
 .btn.btn-black {
@@ -1071,7 +1071,7 @@ a:hover {
 }
 
 .btn.btn-black:hover {
-  background-color: #666666;
+  background-color: #fff;
 }
 
 .btn.btn-link {
@@ -1080,7 +1080,7 @@ a:hover {
 }
 
 .btn.btn-link:hover {
-  background-color: #31a9e1;
+  background-color: #fff;
 }
 
 .card {

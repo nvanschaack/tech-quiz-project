@@ -19,7 +19,7 @@ const resolvers = {
       throw AuthenticationError;
     },
     thoughts: async () => {
-      return Thought.find();
+      return Thought.find().sort({"_id": -1});
     },
     thought: async (_, { _id }) => {
       return Thought.findOne({ _id });

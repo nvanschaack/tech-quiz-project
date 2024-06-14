@@ -16,7 +16,7 @@ export default function QuizForm() {
         //console.log(data);
     }, [loading])
     const handleOptionChange = (answer, index) => {
-        console.log(index);
+        console.log(answer === data.quizzes[index].correctAnswer);
         if (answer === data.quizzes[index].correctAnswer) {
             setScore(score + 1);
         }
@@ -45,7 +45,7 @@ export default function QuizForm() {
                                             <input
                                                 type="radio"
                                                 value={answer}
-                                                // name="quizAnswer"
+                                                name={option.question}
                                                 onChange={() => handleOptionChange(answer, questionindex)}
                                             />{answer}
 
