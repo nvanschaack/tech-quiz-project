@@ -34,10 +34,6 @@ const typeDefs = `
     thought(thoughtId: ID!): Thought
   }
 
- 
-  
-
-
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
 
@@ -45,6 +41,8 @@ const typeDefs = `
 
     addThought(thoughtText: String!): Thought
     removeThought(thoughtId: ID!): Thought
+
+    addHighScore(highScore: Float): User
     
     # addQuiz in future....
   }

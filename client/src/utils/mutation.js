@@ -51,3 +51,13 @@ mutation AddThought($thoughtText: String!) {
   }
 }
 `;
+
+export const UPDATE_HIGH_SCORE = gql`
+mutation addHighScore($highScore: Float) {
+  addHighScore(highScore: $highScore) {
+    _id
+    username
+    highScore
+  }
+}
+`
