@@ -7,6 +7,7 @@ import Signup from './components/SignUp';
 import Login from './components/Login';
 import QuizForm from './pages/QuizForm';
 import Error from './pages/Error'
+import ScorePage from './pages/ScorePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,9 @@ const router = createBrowserRouter([
       }, {
         path: '/quizform',
         element: <QuizForm />
+      }, {
+        path: '/scorepage/:score',
+        element: <ScorePage />
       }
     
     ],
