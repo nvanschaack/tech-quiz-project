@@ -1,5 +1,6 @@
 import { Link, redirect } from 'react-router-dom';
 import QuizForm from '../../pages/QuizForm';
+import HomePage from '../../pages/Home';
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -7,6 +8,9 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+  const homePage = () => {
+    document.location.assign('/');
+  }
 
   const quizForm = () => {
     document.location.assign('/QuizForm')
@@ -26,6 +30,9 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
+             <button className="btn btn-lg btn-light m-2" onClick={homePage}>
+                Home
+              </button>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
@@ -40,6 +47,9 @@ const Header = () => {
               </Link>
               <Link className="btn btn-lg btn-light m-2" to="/signup">
                 Signup
+              </Link>
+              <Link className="btn btn-lg btn-light m-2" to="/">
+                Home
               </Link>
             </>
           )}
