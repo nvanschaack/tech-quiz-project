@@ -1,11 +1,11 @@
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
 import Signup from './components/SignUp';
 import Login from './components/Login';
-import QuizForm from './components/QuizForm';
+import QuizForm from './pages/QuizForm';
 import Error from './pages/Error'
 
 const router = createBrowserRouter([

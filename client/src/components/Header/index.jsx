@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-
+import { Link, redirect } from 'react-router-dom';
+import QuizForm from '../../pages/QuizForm';
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -7,6 +7,11 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+
+  const quizForm = () => {
+    document.location.assign('/QuizForm')
+  };
+
   return (
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
@@ -23,6 +28,9 @@ const Header = () => {
             <>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
+              </button>
+              <button className="btn btn-lg btn-light m-2" onClick={quizForm}>
+                Take Quiz
               </button>
             </>
           ) : (
