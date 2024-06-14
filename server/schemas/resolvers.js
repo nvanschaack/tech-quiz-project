@@ -79,6 +79,18 @@ const resolvers = {
         return thought;
       }
     },
+    addHighScore: async (_, { highScore }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id)
+        //if database highscore is less than the highscore coming from the client side
+        if (user.highScore < highScore) {
+          user.highScore = highScore
+          await user.save();
+        }
+        return user;
+      }
+      throw AuthenticationError
+    }
   },
 };
 
