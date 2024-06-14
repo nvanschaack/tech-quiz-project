@@ -1,4 +1,4 @@
-import { Link, redirect } from 'react-router-dom';
+import { Link, redirect, useLocation } from 'react-router-dom';
 import QuizForm from '../../pages/QuizForm';
 import Auth from '../../utils/auth';
 
@@ -8,10 +8,16 @@ const Header = () => {
     Auth.logout();
   };
 
+  const homePage = () => {
+    document.location.assign('/')
+  };
+
   const quizForm = () => {
     document.location.assign('/QuizForm')
   };
 
+  const location = useLocation();
+  
   return (
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
@@ -21,20 +27,28 @@ const Header = () => {
           </h1>
         </Link>
         <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Come mold your mind with other like minded programmers. To be the best you have to study with the best.
+        "The only true wisdom is in knowing you know nothing." - Socrates 
         </p>
         <div>
           {Auth.loggedIn() ? (
             <>
+              <button className="btn btn-lg btn-light m-2" onClick={homePage}>
+                Home
+              </button>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
-              <button className="btn btn-lg btn-light m-2" onClick={quizForm}>
-                Take Quiz
-              </button>
+              { location.pathname !== '/QuizForm' && (
+                <button className="btn btn-lg btn-light m-2" onClick={quizForm}>
+                  Take Quiz
+                </button>
+              )}
             </>
           ) : (
             <>
+              <Link className="btn btn-lg btn-primary m-2" to="/">
+                Home
+              </Link>
               <Link className="btn btn-lg btn-primary m-2" to="/login">
                 Login
               </Link>
