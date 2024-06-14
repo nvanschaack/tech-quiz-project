@@ -10,10 +10,6 @@ const Header = () => {
   };
   const homePage = () => {
     document.location.assign('/');
-  }
-
-  const homePage = () => {
-    document.location.assign('/')
   };
 
   const quizForm = () => {
@@ -58,9 +54,6 @@ const Header = () => {
               </Link>
               <Link className="btn btn-lg btn-light m-2" to="/signup">
                 Signup
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/">
-                Home
               </Link>
             </>
           )}
