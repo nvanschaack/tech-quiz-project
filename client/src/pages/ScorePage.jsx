@@ -15,7 +15,7 @@ export default function Scores() {
             try {
                 if (score > 0) {
                     const { data } = await addHighScore({ variables: { score } })
-                    // console.log(data)
+                    console.log(data)
                     if (score > data.addHighScore.highScore) {
                         setHighScore(score)
                     } else {
